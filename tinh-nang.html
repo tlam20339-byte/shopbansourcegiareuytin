@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tính năng |shopbansourcegiare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="background-elements"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">Ng Sang</div>
+
+      <div class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioi-thieu.html">Giới thiệu</a>
+        <a href="tinh-nang.html" class="active">Tính năng</a>
+        <a href="bang-gia.html">Bảng giá</a>
+      </div>
+
+      <button class="nav-contact">Liên hệ</button>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="toggleMenu()">
+        <i class="fas fa-times"></i>
+      </div>
+      <a href="index.html" onclick="toggleMenu()">Trang chủ</a>
+      <a href="gioi-thieu.html" onclick="toggleMenu()">Giới thiệu</a>
+      <a href="tinh-nang.html" onclick="toggleMenu()">Tính năng</a>
+      <a href="bang-gia.html" onclick="toggleMenu()">Bảng giá</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="feature-hero">
+      <h1>Tính năng & Dịch vụ</h1>
+      <p>
+        Chuyên cung cấp source website, script tự động hoá và giải pháp web tối
+        ưu cho cá nhân & doanh nghiệp.
+      </p>
+    </section>
+
+    <!-- FEATURE LIST -->
+    <section class="feature-section">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Source Website Hoàn Chỉnh</h3>
+          <p>
+            Giao diện hiện đại, responsive, tối ưu tốc độ. Phù hợp landing page,
+            portfolio, website bán hàng.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Script Tự Động Hoá</h3>
+          <p>
+            Script crawl dữ liệu, auto đăng bài, auto thao tác web, giúp tiết
+            kiệm thời gian và chi phí.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Dễ Tuỳ Biến</h3>
+          <p>
+            Code rõ ràng, dễ chỉnh sửa. Thay logo, màu sắc, nội dung chỉ trong
+            vài phút.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Bảo Mật & Ổn Định</h3>
+          <p>
+            Source được kiểm tra kỹ, hạn chế bug, phù hợp triển khai lâu dài cho
+            khách hàng.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDE -->
+    <section class="feature-guide">
+      <h2>Hướng dẫn sử dụng</h2>
+      <ol>
+        <li>Chọn source hoặc script phù hợp nhu cầu</li>
+        <li>Liên hệ để nhận demo / tư vấn</li>
+        <li>Thanh toán và nhận source code</li>
+        <li>Hướng dẫn cài đặt chi tiết</li>
+        <li>Hỗ trợ chỉnh sửa cơ bản sau bàn giao</li>
+      </ol>
+    </section>
+
+    <!-- CTA -->
+    <section class="feature-cta">
+      <h2>Bạn cần source hoặc script?</h2>
+      <p>Liên hệ ngay để được tư vấn nhanh và chính xác.</p>
+      <a
+        href="https://www.facebook.com/nguyen.tan.sang.365657/"
+        target="_blank"
+        class="cta-btn"
+        >Liên hệ ngay</a
+      >
+    </section>
+  </body>
+</html>

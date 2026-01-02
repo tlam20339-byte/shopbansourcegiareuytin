@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi" style="overflow-x: hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shopbansourcegiare</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-elements"></div>
+
+    <nav>
+      <div class="nav-logo">Ng Sang</div>
+
+      <div class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioi-thieu.html">Giới thiệu</a>
+        <a href="tinh-nang.html">Tính năng</a>
+        <a href="bang-gia.html">Bảng giá</a>
+      </div>
+
+      <button class="nav-contact">Liên hệ</button>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="toggleMenu()">
+        <i class="fas fa-times"></i>
+      </div>
+      <a href="#" onclick="toggleMenu()">Trang chủ</a>
+      <a href="#" onclick="toggleMenu()">Tính năng</a>
+      <a href="#" onclick="toggleMenu()">Giới thiệu</a>
+      <a href="#" onclick="toggleMenu()">Bảng giá</a>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <h1>Biến ý tưởng của bạn thành hiện thực</h1>
+        <p>
+          Đây là nơi bạn có thể tìm một source ưng ý đối với bản thân mình và
+          mong mọi người ủng hộ website của mình.
+        </p>
+
+        <div class="buttons">
+          <button>Liên Hệ Bên Dưới</button>
+          <button>Tìm hiểu thêm hãy chọn menu ở bên trên để hiểu rõ hơn</button>
+        </div>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/nguyen.tan.sang.365657/"
+            target="_blank"
+            rel="noopener noreferrer "
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://discord.gg/aCxeAGas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-discord"></i
+          ></a>
+          <a
+            href="https://t.me/NgSangT"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-telegram"></i
+          ></a>
+          <a
+            href="https://soundcloud.com/raiden-ei-my-waifu"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-soundcloud"></i>
+          </a>
+        </div>
+      </div>
+      <div class="bg-main-container">
+        <div class="bg-main">
+          <spline-viewer
+            url="https://prod.spline.design/BoWg-dch2T9e59sl/scene.splinecode"
+          >
+          </spline-viewer>
+        </div>
+      </div>
+    </div>
+    <!-- đóng .container -->
+
+    <script>
+      function toggleMenu() {
+        const hamburger = document.querySelector(".hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+
+        hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        overlay.classList.toggle("active");
+
+        document.body.style.overflow = mobileMenu.classList.contains("open")
+          ? "hidden"
+          : "";
+      }
+    </script>
+  </body>
+</html>

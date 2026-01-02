@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bảng giá |shopbansourcegiare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="background-elements"></div>
+
+    <!-- NAV (Y HỆT TRANG CHỦ) -->
+    <nav>
+      <div class="nav-logo">Ng Sang</div>
+
+      <div class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioi-thieu.html">Giới thiệu</a>
+        <a href="tinh-nang.html">Tính năng</a>
+        <a href="bang-gia.html" class="active">Bảng giá</a>
+      </div>
+
+      <button class="nav-contact">Liên hệ</button>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="toggleMenu()">
+        <i class="fas fa-times"></i>
+      </div>
+      <a href="index.html" onclick="toggleMenu()">Trang chủ</a>
+      <a href="gioi-thieu.html" onclick="toggleMenu()">Giới thiệu</a>
+      <a href="tinh-nang.html" onclick="toggleMenu()">Tính năng</a>
+      <a href="bang-gia.html" onclick="toggleMenu()">Bảng giá</a>
+    </div>
+
+    <section class="pricing">
+      <!-- DÒNG MÔ TẢ (NẰM TRÊN) -->
+      <p class="pricing-desc">
+        Chọn source phù hợp – Xem demo – Nhận code ngay
+      </p>
+
+      <!-- FILTER (NẰM NGAY TRÊN Ô BÁN HÀNG) -->
+      <div class="pricing-filter">
+        <button class="active" onclick="filterType('all')">Tất cả</button>
+        <button onclick="filterType('landing')">Landing Page</button>
+        <button onclick="filterType('shop')">Web Bán Hàng</button>
+        <button onclick="filterType('profile')">Profile</button>
+      </div>
+
+      <!-- GRID Ô BÁN HÀNG -->
+      <div class="pricing-grid">
+        <!-- các .price-card ở đây -->
+      </div>
+    </section>
+
+    <!-- GRID -->
+    <section class="pricing-grid">
+      <!-- LANDING -->
+      <div class="price-card" data-type="landing">
+        <h3>Landing Page Bán Hàng</h3>
+        <p>HTML • CSS • JS</p>
+        <span class="price">0đ</span>
+        <a href="#" class="btn">Xem chi tiết</a>
+      </div>
+
+      <div class="price-card" data-type="landing">
+        <h3>Landing Page Sản Phẩm</h3>
+        <p>Responsive • Modern</p>
+        <span class="price">0đ</span>
+        <a href="#" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- SHOP -->
+      <div class="price-card" data-type="shop">
+        <h3>Website Bán Hàng</h3>
+        <p>Giỏ hàng • Thanh toán</p>
+        <span class="price">0đ</span>
+        <a href="#" class="btn">Xem chi tiết</a>
+      </div>
+
+      <div class="price-card" data-type="shop">
+        <h3>Full Ecommerce</h3>
+        <p>Admin • Đơn hàng • Sản phẩm</p>
+        <span class="price">0đ</span>
+        <a href="#" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- PROFILE -->
+      <div class="price-card" data-type="profile">
+        <h3>Website Profile</h3>
+        <p>Cá nhân • Freelancer</p>
+        <span class="price">0đ</span>
+        <a href="#" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- BLOG -->
+      <div class="price-card" data-type="blog">
+        <h3>Website Blog</h3>
+        <p>SEO Ready</p>
+        <span class="price">0đ</span>
+        <a href="#" class="btn">Xem chi tiết</a>
+      </div>
+    </section>
+
+    <footer class="pricing-footer">© 2026 Ng Sang • Bán Source Website</footer>
+
+    <script>
+      function toggleMenu() {
+        const hamburger = document.querySelector(".hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+
+        hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        overlay.classList.toggle("active");
+
+        document.body.style.overflow = mobileMenu.classList.contains("open")
+          ? "hidden"
+          : "";
+      }
+
+      function filterType(type) {
+        document.querySelectorAll(".price-card").forEach((card) => {
+          card.style.display =
+            type === "all" || card.dataset.type === type ? "block" : "none";
+        });
+      }
+
+      function filterType(type) {
+        // filter card
+        document.querySelectorAll(".price-card").forEach((card) => {
+          card.style.display =
+            type === "all" || card.dataset.type === type ? "block" : "none";
+        });
+
+        // active button
+        document
+          .querySelectorAll(".pricing-filter button")
+          .forEach((btn) => btn.classList.remove("active"));
+
+        event.target.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi" style="overflow-x: hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu | shopbansourcegiare</title>
+
+    <!-- CSS CHUNG -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICON + FONT -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="background-elements"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">Ng Sang</div>
+
+      <div class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioi-thieu.html" class="active">Giới thiệu</a>
+        <a href="tinh-nang.html">Tính năng</a>
+        <a href="bang-gia.html">Bảng giá</a>
+      </div>
+
+      <button class="nav-contact">Liên hệ</button>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- OVERLAY + MOBILE MENU -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="toggleMenu()">
+        <i class="fas fa-times"></i>
+      </div>
+      <a href="index.html" onclick="toggleMenu()">Trang chủ</a>
+      <a href="gioi-thieu.html" onclick="toggleMenu()">Giới thiệu</a>
+      <a href="tinh-nang.html" onclick="toggleMenu()">Tính năng</a>
+      <a href="bang-gia.html" onclick="toggleMenu()">Bảng giá</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="about-hero">
+      <h1>Giới thiệu</h1>
+      <p>
+        Tôi cung cấp source code website và script web phục vụ học tập, kinh
+        doanh và triển khai thực tế.
+      </p>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="info-section">
+      <div class="info-box">
+        <h2 class="info-title">Tôi làm gì?</h2>
+
+        <p class="info-text">
+          Tôi chuyên xây dựng <b>source website</b> và <b>script web</b> với
+          tiêu chí: dễ dùng – dễ chỉnh sửa – áp dụng thực tế.
+        </p>
+
+        <ul class="info-list">
+          <li>✔ Source web bán hàng, landing page, portfolio</li>
+          <li>✔ Script tự động hoá thao tác web</li>
+          <li>✔ Script crawl dữ liệu, hỗ trợ SEO</li>
+          <li>✔ Code sạch, rõ ràng, dễ mở rộng</li>
+          <li>✔ Có tài liệu & hướng dẫn sử dụng</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h2 class="info-title">Quy trình làm việc</h2>
+
+        <ol class="info-step">
+          <li>Tiếp nhận nhu cầu từ khách hàng</li>
+          <li>Tư vấn source / script phù hợp</li>
+          <li>Demo hoặc mô tả chi tiết</li>
+          <li>Thanh toán & bàn giao mã nguồn</li>
+          <li>Hỗ trợ cài đặt & sử dụng</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <h2>Bạn đang cần source hoặc script?</h2>
+      <p>Inbox để được tư vấn nhanh – đúng nhu cầu – không lan man.</p>
+      <a
+        href="https://www.facebook.com/nguyen.tan.sang.365657/"
+        target="_blank"
+        class="cta-btn"
+      >
+        Liên hệ ngay
+      </a>
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+      function toggleMenu() {
+        const hamburger = document.querySelector(".hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+
+        hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        overlay.classList.toggle("active");
+
+        document.body.style.overflow = mobileMenu.classList.contains("open")
+          ? "hidden"
+          : "";
+      }
+    </script>
+  </body>
+</html>
